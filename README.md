@@ -26,3 +26,12 @@ this.get('/', function(context) {
 </div> 
 
 ```
+3 - Dont use " (double quotes) in <% %> syntax, because can causes errors in your script and you can use while, for, if statements in your html template.
+
+```html
+<div>
+   <% if(!name) { %>
+      Hello! <b>friend</b>
+   <% } %>   
+</div>
+ ```
