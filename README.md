@@ -41,7 +41,8 @@ Dont use " (double quotes) in <% %> syntax, because can causes errors in your sc
 </div>
  ```
  
- **Redirecting**
+ **Redirecting - context.redirect(path)**
+ 
  ```js
  this.get('#/success', function(context) {
          this.partial('pages/success.html');
@@ -49,7 +50,8 @@ Dont use " (double quotes) in <% %> syntax, because can causes errors in your sc
 });
  ```
  
- **404 Page**
+ 
+ **404 Page - this.notFound(verb, url)**
  
 ```js
 this.notFound = (verb, url) => { 
@@ -57,7 +59,8 @@ this.notFound = (verb, url) => {
 }
 ```
 
-**Render element inside page**
+
+**Render element inside page - context.render(path).appendTo(elementHTML)**
 
 ```js
 this.get('#/about', function(context) {
