@@ -51,11 +51,12 @@ Dont use " (double quotes) in <% %> syntax, because can causes errors in your sc
  ```
  
  
- **404 Page - this.notFound(verb, url)**
+ **404 Page - this.notFound(verb, path)**
  
 ```js
-this.notFound = (verb, url) => { 
-  $('#app').html('404 not found');
+this.notFound = function(verb, path) {
+         console.log(path)
+         $.get("pages/404.html", (notfound) => $('#app').html(notfound) );
 }
 ```
 
