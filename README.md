@@ -3,7 +3,7 @@ A example of SPA page with SammyJS
 
 # Install
 
-1 - Go to js folder and create your routes in app.js [ ./js/app.js ]
+Go to js folder and create your routes in app.js [ ./js/app.js ]
 see: http://sammyjs.org/docs/api/0.7.4/all#Sammy.Template
 
 ```js
@@ -15,7 +15,12 @@ this.get('/', function(context) {
 });
 ```
 
-2 - Create your template html [ ./pages/home.html ]
+ 
+ # Commands Essentials
+ 
+ **Template Engine**
+
+Create your template html [ ./pages/home.html ]
 
 ```html
 <h1>Home Page</h1> 
@@ -26,7 +31,7 @@ this.get('/', function(context) {
 </div> 
 
 ```
-3 - Dont use " (double quotes) in <% %> syntax, because can causes errors in your script and you can use while, for, if statements in your html template.
+Dont use " (double quotes) in <% %> syntax, because can causes errors in your script and you can use while, for, if statements in your html template.
 
 ```html
 <div>
@@ -36,8 +41,6 @@ this.get('/', function(context) {
 </div>
  ```
  
- # Commands Essentials
- 
  **Redirecting**
  ```js
  this.get('#/success', function(context) {
@@ -46,10 +49,23 @@ this.get('/', function(context) {
 });
  ```
  
- **404 Router**
+ **404 Page**
  
 ```js
-this.notFound = function() { 
-   
+this.notFound = (verb, url) => { 
+  $('#app').html('404 not found');
 }
 ```
+
+**Render element inside page**
+
+```js
+this.get('#/about', function(context) {
+
+  context.render('pages/faq.html')
+         .appendTo('body');
+});
+```
+
+
+
