@@ -35,3 +35,21 @@ this.get('/', function(context) {
    <% } %>   
 </div>
  ```
+ 
+ # Commands Essentials
+ 
+ **Redirecting**
+ ```js
+ this.get('#/success', function(context) {
+         this.partial('pages/success.html');
+         setTimeout( () => this.redirect('#/'), 2000 )
+});
+ ```
+ 
+ **404 Router**
+ 
+```js
+this.notFound = function() { 
+   
+}
+```
