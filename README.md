@@ -71,4 +71,11 @@ this.get('#/about', function(context) {
 ```
 
 
+**Swap - context.swap(element)**
+```js
+this.get('#/about', function(context) {
+  context.swap('loading page...');
+});
+```
+
 
