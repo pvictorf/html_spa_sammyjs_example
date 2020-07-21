@@ -122,8 +122,13 @@ function initApp() {
 }
 
 async function saveUser(context) {
-   // await Do ajax request
-   context.redirect('#/user-success.html')
+   try {
+      const user = await $.post('api/user', () => {});
+   } catch(e) {
+      console.log(e);
+   }
+  
+   context.redirect('#/user-info.html');
 }
 ```
 
