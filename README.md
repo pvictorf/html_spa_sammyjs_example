@@ -86,7 +86,7 @@ this.after(function(context, next) {
 });
 ```
 
-**Before enter router**
+**Before enter router - this.before(router, callback)**
 ```js
 this.before('#/contact', function(context, next) {
    alert('Do before access route');
