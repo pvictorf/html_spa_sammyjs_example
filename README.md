@@ -122,6 +122,7 @@ function initApp() {
 }
 
 async function saveUser(context) {
+ // Await ajax request and redirect or do something
    try {
       const user = await $.post('api/user', () => {});
    } catch(e) {
