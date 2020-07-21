@@ -96,6 +96,18 @@ this.get('#/contact', function(context, next) {
 });
 ```
 
+**Disabling cache template(Overriding original method)**
+```js
+this.originalTemplateCache = this.templateCache;
+   this.templateCache = function(key, value) {
+        if ( key.match(/nocache/) ) {
+            return value;
+         } else {
+            this.originalTemplateCache(key, value);
+         }
+   };
+```
+
 **Using context outside the app scope**
 ```js
 (function($) {
