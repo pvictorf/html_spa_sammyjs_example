@@ -97,3 +97,33 @@ this.get('#/contact', function(context, next) {
 });
 ```
 
+**Using context outside the app scope**
+```js
+(function($) {
+   initApp();
+})(jQuery);
+
+function initApp() {
+
+   var app = $.sammy("#app", function() {
+
+      this.use('Template', 'html');
+
+      this.get('/', function(context) {
+         context.partial('pages/home.html');
+         
+         //Form submit event
+         $('form').submit( () => { saveUser(context); });
+      });
+
+   });
+
+   app.run('#/');
+}
+
+async function saveUser(context) {
+   // await Do ajax request
+   context.redirect('#/user-success.html')
+}
+```
+
