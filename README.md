@@ -79,4 +79,21 @@ this.get('#/about', function(context) {
 });
 ```
 
+**After router loaded - this.after(callback)** 
+```js
+this.after(function(context, next) {
+         alert('Do after route is loaded');
+});
+```
+
+**Before enter router**
+```js
+this.before('#/contact', function(context, next) {
+   alert('Do before access route');
+});
+
+this.get('#/contact', function(context, next) {
+         context.partial('pages/contact.html');
+});
+```
 
