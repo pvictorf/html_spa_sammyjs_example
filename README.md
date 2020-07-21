@@ -55,8 +55,7 @@ Dont use " (double quotes) in <% %> syntax, because can causes errors in your sc
  
 ```js
 this.notFound = function(verb, path) {
-         console.log(path)
-         $.get("pages/404.html", (notfound) => $('#app').html(notfound) );
+   $.get("pages/404.html", function(notfound) {$('#app').html(notfound)});
 }
 ```
 
